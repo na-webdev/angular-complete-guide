@@ -7,6 +7,8 @@ import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
 import { WarningAlertComponent } from './warning-alert/warning-alert.component';
 import { SuccessAlertComponent } from './success-alert/success-alert.component';
+import { AssignmentInputComponent } from './assignment-input/assignment-input.component';
+import { AssignmentDisplayDetailsComponent } from './assignment-display-details/assignment-display-details.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { SuccessAlertComponent } from './success-alert/success-alert.component';
     ServersComponent,
     WarningAlertComponent,
     SuccessAlertComponent,
+    AssignmentInputComponent,
+    AssignmentDisplayDetailsComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

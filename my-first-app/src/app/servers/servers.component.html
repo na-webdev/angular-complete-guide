@@ -1,11 +1,33 @@
-  <div class="row">
-    <div class="col-xs-12">
-      <h1>servers works!</h1>
-      <hr>
-      <button (click)="addNewServer()" class="btn btn-primary" >Add server</button>
-      <app-server></app-server>
-      <app-server></app-server>
-      <app-server></app-server>
-    </div>
+<div class="row">
+  <div class="col-xs-12">
+    <h1>servers works!</h1>
+    <hr />
+    <label for="server-name"></label>
+    <!--    <input-->
+    <!--      id="server-name"-->
+    <!--      type="text"-->
+    <!--      class="form-control"-->
+    <!--      (input)="updateServerName($event)"-->
+    <!--      [value]="serverName"-->
+    <!--    />-->
+    <input
+      id="server-name"
+      type="text"
+      class="form-control"
+      [(ngModel)]="serverName"
+    />
+    <p>{{ serverName }}</p>
+    <button
+      [disabled]="disableAdding"
+      (click)="addNewServer()"
+      class="btn btn-primary"
+    >
+      Add server
+    </button>
+    <!--      <p [innerText]="disableAdding"></p>-->
+    <p *ngIf="!disableAdding">{{ serverCreationStatus }}</p>
+    <app-server></app-server>
+    <app-server></app-server>
+    <app-server></app-server>
   </div>
-<div></div>
+</div>

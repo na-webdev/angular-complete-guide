@@ -1,1 +1,7 @@
-<h1>App server</h1>
+<h1
+  [ngClass]="getColor() === 'red' ? 'text-info' : 'text-light'"
+  class="rounded-2 p-3"
+  [ngStyle]="{ backgroundColor: getColor() }"
+>
+  App server ({{ serverStatus }})
+</h1>

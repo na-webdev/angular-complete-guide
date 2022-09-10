@@ -1,0 +1,3 @@
+<input class="form-control" type="text" [(ngModel)]="username" />
+<h1>{{ username }}</h1>
+<button (click)="clearInput()" class="btn btn-danger" [disabled]="!username">Reset</button>
