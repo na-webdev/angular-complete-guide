@@ -1,0 +1,24 @@
+<div class="container">
+  <div>
+    <app-game-control
+      (gameIsOn)="onGameIsOn($event)"
+      (gameStopped)="onGameStop($event)"
+    ></app-game-control>
+    <div *ngIf="values.length === 0; else gameBoard" class="bg-warning box">
+      {{ message }}
+    </div>
+    <ng-template #gameBoard>
+      <div
+        *ngFor="
+          let value of values;
+          let i = index;
+          let isEven = even;
+          let isOdd = odd
+        "
+      >
+        <app-even [data]="value" *ngIf="value % 2 == 0"></app-even>
+        <app-odd [data]="value" *ngIf="value % 2 == 1"></app-odd>
+      </div>
+    </ng-template>
+  </div>
+</div>

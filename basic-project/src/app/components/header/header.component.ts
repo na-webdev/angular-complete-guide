@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { NavigationLink } from '../../shared/navigation-link.type';
 
 @Component({
   selector: 'bp-header',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: [],
 })
 export class HeaderComponent {
+  @Output() activatedLink = new EventEmitter<NavigationLink>();
   collapsed = true;
+
+  activateLink(link: NavigationLink) {
+    this.activatedLink.emit(link);
+  }
 }
