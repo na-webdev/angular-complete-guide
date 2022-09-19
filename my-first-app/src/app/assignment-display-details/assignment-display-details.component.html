@@ -1,16 +1,18 @@
-<div class="mt-2">
+<div class="mt-2" appBetterHighlight defaultColor="yellow" highlightColor="red">
   <button (click)="toggleShowSecret()" class="btn btn-success d-block">
     Display details
   </button>
   <h3 class="mt-3">
-    <span *ngIf="showSecret">This is super secret text</span>
+    <span *appUnless="!showSecret">This is super secret text</span>
   </h3>
-  <ul>
+  <ul appBetterHighlight>
     <li
       [ngStyle]="{ backgroundColor: i >= 4 ? 'blue' : 'transparent' }"
       *ngFor="let logData of buttonClickLog; let i = index"
     >
-      <span [ngClass]="i >= 4 ? 'text-light p-3 rounded-2' : ''">{{ logData }}</span>
+      <span [ngClass]="i >= 4 ? 'text-light p-3 rounded-2' : ''">{{
+        logData
+      }}</span>
     </li>
   </ul>
 </div>

@@ -9,6 +9,9 @@ import { WarningAlertComponent } from './warning-alert/warning-alert.component';
 import { SuccessAlertComponent } from './success-alert/success-alert.component';
 import { AssignmentInputComponent } from './assignment-input/assignment-input.component';
 import { AssignmentDisplayDetailsComponent } from './assignment-display-details/assignment-display-details.component';
+import { BasicHighlightDirective } from './custom-directives/basic-highlight.directive';
+import { BetterHighlightDirective } from './custom-directives/better-highlight.directive';
+import { UnlessDirective } from './custom-directives/unless.directive';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,9 @@ import { AssignmentDisplayDetailsComponent } from './assignment-display-details/
     SuccessAlertComponent,
     AssignmentInputComponent,
     AssignmentDisplayDetailsComponent,
+    BasicHighlightDirective,
+    BetterHighlightDirective,
+    UnlessDirective,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
