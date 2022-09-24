@@ -1,13 +1,14 @@
 <div class="row">
   <div class="col-md-5">
-    <bp-recipe-list (recipeSelected)="onRecipeSelected($event)"></bp-recipe-list>
+    <bp-recipe-list></bp-recipe-list>
   </div>
   <div class="col-md-7">
-    <bp-recipe-detail [recipeData]="currentRecipe" *ngIf="currentRecipe; else noRecipeSelected"></bp-recipe-detail>
+    <bp-recipe-detail
+      [recipeData]="currentRecipe"
+      *ngIf="currentRecipe; else noRecipeSelected"
+    ></bp-recipe-detail>
     <ng-template #noRecipeSelected>
-      <p>
-        No recipes selected
-      </p>
+      <p>No recipes selected</p>
     </ng-template>
   </div>
 </div>

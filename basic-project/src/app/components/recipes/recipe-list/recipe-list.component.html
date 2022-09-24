@@ -3,9 +3,9 @@
     <button class="btn btn-success">New Recipe</button>
   </div>
 </div>
-<hr>
+<hr />
 <div class="row">
   <div class="col-xs-12" *ngFor="let recipe of recipes">
-    <bp-recipe-item (click)="showDetails(recipe)" [recipe]="recipe"></bp-recipe-item>
+    <bp-recipe-item [recipe]="recipe"></bp-recipe-item>
   </div>
 </div>
