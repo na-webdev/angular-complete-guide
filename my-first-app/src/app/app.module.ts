@@ -29,5 +29,6 @@ import { UnlessDirective } from './custom-directives/unless.directive';
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
+  exports: [ServerComponent],
 })
 export class AppModule {}
