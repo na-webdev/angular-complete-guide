@@ -1,11 +1,12 @@
-import { EventEmitter, Injectable, Output } from '@angular/core';
+import { Injectable, Output } from '@angular/core';
 import { Ingredient } from '../shared/ingredient.model';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ShoppingListService {
-  @Output() shoppingListChanged = new EventEmitter();
+  @Output() shoppingListChanged = new Subject<boolean>();
 
   private ingredients: Ingredient[] = [
     new Ingredient('Apples', 5),
@@ -31,7 +32,7 @@ export class ShoppingListService {
         this.ingredients.push(item);
       }
     });
-    this.shoppingListChanged.emit();
+    this.shoppingListChanged.next(true);
   }
 
   deleteIngredient(item: Ingredient) {
@@ -39,7 +40,7 @@ export class ShoppingListService {
       (ingredient) =>
         !(ingredient.name === item.name && ingredient.amount === item.amount)
     );
-    this.shoppingListChanged.emit();
+    this.shoppingListChanged.next(true);
   }
 
   filterAndAddIngredients(items: Ingredient[]) {}
