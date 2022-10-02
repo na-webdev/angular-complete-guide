@@ -8,6 +8,7 @@ import { NgForm } from '@angular/forms'
 })
 export class AppComponent {
   @ViewChild('f') signUpForm: NgForm
+
   onSubmit() {
     console.log(this.signUpForm.value)
   }
