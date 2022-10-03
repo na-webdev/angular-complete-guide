@@ -7,11 +7,16 @@ import { Subject } from 'rxjs';
 })
 export class ShoppingListService {
   @Output() shoppingListChanged = new Subject<boolean>();
+  @Output() shoppingItemSelected = new Subject<number>();
 
   private ingredients: Ingredient[] = [
     new Ingredient('Apples', 5),
     new Ingredient('Banana', 2),
   ];
+
+  getIngredient(index: number) {
+    return this.ingredients[index];
+  }
 
   getIngredients() {
     return this.ingredients.slice();
@@ -32,6 +37,11 @@ export class ShoppingListService {
         this.ingredients.push(item);
       }
     });
+    this.shoppingListChanged.next(true);
+  }
+
+  updateIngredient(index: number, item: Ingredient) {
+    this.ingredients[index] = item;
     this.shoppingListChanged.next(true);
   }
 

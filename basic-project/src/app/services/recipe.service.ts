@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Recipe } from '../shared/recipe.model';
 import { Ingredient } from '../shared/ingredient.model';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class RecipeService {
+  recipesChanged = new Subject<boolean>();
   private recipes: Recipe[] = [
     new Recipe(
       'Steak Recipe',
@@ -15,9 +17,15 @@ export class RecipeService {
     ),
     new Recipe(
       'Plov Recipe',
-      'This is most Plov',
+      'This is most delicious Plov',
       'https://qph.cf2.quoracdn.net/main-qimg-253427094991c3ef41c9b127f3796df4.webp',
       [new Ingredient('Meat', 2), new Ingredient('Rice', 1)]
+    ),
+    new Recipe(
+      'Chicken Kazan Kebab',
+      'Very good meal',
+      'https://img.freepik.com/free-photo/chicken-wings-barbecue-sweetly-sour-sauce-picnic-summer-menu-tasty-food-top-view-flat-lay_2829-6471.jpg?w=2000',
+      [new Ingredient('Chicken Meat', 2), new Ingredient('Potato', 1)]
     ),
   ];
 
@@ -27,5 +35,21 @@ export class RecipeService {
 
   getRecipeId(id: number) {
     return { ...this.recipes[id] };
+  }
+
+  addRecipe(recipe: Recipe) {
+    this.recipes.push(recipe);
+    this.recipesChanged.next(true);
+  }
+
+  updateRecipe(index: number, newRecipe: Recipe) {
+    this.recipes[index] = { ...newRecipe };
+    console.log(this.recipes);
+    this.recipesChanged.next(true);
+  }
+
+  deleteRecipe(index: number) {
+    this.recipes.splice(index, 1);
+    this.recipesChanged.next(true);
   }
 }
