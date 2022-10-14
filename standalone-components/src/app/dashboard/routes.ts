@@ -1,0 +1,14 @@
+import { Routes } from "@angular/router";
+
+export const DASHBOARD_ROUTES: Routes = [
+  {
+    path: "",
+    loadComponent: () =>
+      import("./dashboard.component").then((m) => m.DashboardComponent),
+  },
+  {
+    path: "today",
+    loadComponent: () =>
+      import("./today/today.component").then((m) => m.TodayComponent),
+  },
+];
