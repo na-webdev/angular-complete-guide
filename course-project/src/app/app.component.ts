@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationLink } from './shared/navigation-link.type';
-import { AuthService } from './services/auth.service';
+import { NavigationLink } from './shared/types/navigation-link.type';
+import { AuthService } from './auth/services/auth.service';
 
 @Component({
   selector: 'app-root',

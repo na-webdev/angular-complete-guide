@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { DataStorageService } from '../../services/data-storage.service';
+import { DataStorageService } from '../../shared/services/data-storage.service';
 import { Subscription } from 'rxjs';
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '../../auth/services/auth.service';
 
 @Component({
   selector: 'bp-header',
