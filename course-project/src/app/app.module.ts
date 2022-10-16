@@ -8,6 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
+import { StoreModule } from '@ngrx/store';
+import { shoppingListReducer } from './shopping-list/store/shopping-list.reducer';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
@@ -15,6 +17,7 @@ import { CoreModule } from './core/core.module';
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
+    StoreModule.forRoot({ shoppingListState: shoppingListReducer }),
     AppRoutingModule,
     SharedModule,
     CoreModule,
