@@ -1,0 +1,21 @@
+<h1 class="highlight rounded">{{ title }}</h1>
+<ul>
+  <li [style.font-style]="'italic'" [style.font-size.em]="2">Interpolation</li>
+  <li
+    [ngClass]="{highlight: true, rounded: true}"
+    bind-textContent="propertyBindingText"
+  ></li>
+  <li
+    [class.highlight]="isEventBinding"
+    [className]="'rounded'"
+    style="cursor: pointer; margin-top: 10px"
+    #el
+  >
+    <button (click)="revealContent(el)">click me</button>
+  </li>
+  <input [(ngModel)]="twoWayBindingText" />
+  <hr />
+  <input [(ngModel)]="color" />
+  <div [ngStyle]="{ color: color }">Change my color</div>
+  <div (keyup.space)="value='This is the text.'" >{{value}}</div>
+</ul>
