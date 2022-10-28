@@ -2,7 +2,7 @@
 <ul>
   <li [style.font-style]="'italic'" [style.font-size.em]="2">Interpolation</li>
   <li
-    [ngClass]="{highlight: true, rounded: true}"
+    [ngClass]="{ highlight: true, rounded: true }"
     bind-textContent="propertyBindingText"
   ></li>
   <li
@@ -13,9 +13,19 @@
   >
     <button (click)="revealContent(el)">click me</button>
   </li>
-  <input [(ngModel)]="twoWayBindingText" />
+  <input [name]="twoWayBindingText" [(ngModel)]="twoWayBindingText" />
+  <p class="bg-success p-2">{{ twoWayBindingText | titlecase }}</p>
   <hr />
   <input [(ngModel)]="color" />
   <div [ngStyle]="{ color: color }">Change my color</div>
-  <div (keyup.space)="value='This is the text.'" >{{value}}</div>
+  <input (keyup.control.enter)="value = 'This is the text.'" />
+  <p class="card">{{ value }}</p>
+  <button on-click="revealContent(el)" class="btn btn-primary rounded-4">
+    On click
+  </button>
+  <div *cIf="value">
+    Custom structural directive
+  </div>
 </ul>
+
+<app-custom-two-way></app-custom-two-way>
