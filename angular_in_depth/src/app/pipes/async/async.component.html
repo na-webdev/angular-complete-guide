@@ -1,0 +1,35 @@
+<h3>Async</h3>
+
+<div *ngIf="obsValue | async as value; else elseBlock">
+  {{ value }}
+</div>
+
+<ng-template #elseBlock> Observable is loading. Please wait </ng-template>
+
+<ul>
+  <li *ngFor="let breed of (hounds | async)?.message">{{ breed }}</li>
+</ul>
+
+<ul>
+  <li *ngFor="let item of obj | keyvalue">
+    {{ item.key }} ---> {{ item.value }}
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor="let item of obj | keyvalue: orderOriginal">
+    {{ item.key }} ---> {{ item.value }}
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor="let item of obj | keyvalue: orderbyValueAsc">
+    {{ item.key }} ---> {{ item.value }}
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor="let item of obj | keyvalue: orderbyValueDsc">
+    {{ item.key }} ---> {{ item.value }}
+  </li>
+</ul>

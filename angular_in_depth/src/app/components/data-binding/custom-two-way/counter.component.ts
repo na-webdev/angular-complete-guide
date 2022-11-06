@@ -1,4 +1,11 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  OnChanges,
+  SimpleChanges,
+} from '@angular/core';
 @Component({
   selector: 'app-counter',
   template: `
@@ -10,7 +17,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
     </div>
   `,
 })
-export class CounterComponent {
+export class CounterComponent implements OnChanges {
   @Input() count: number = 0;
   @Output() countChange: EventEmitter<number> = new EventEmitter<number>();
 
@@ -18,5 +25,9 @@ export class CounterComponent {
     this.count++;
     console.log(this.count);
     this.countChange.emit(this.count);
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(changes);
   }
 }

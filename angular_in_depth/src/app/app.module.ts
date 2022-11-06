@@ -9,6 +9,9 @@ import { CustomTwoWayComponent } from './components/data-binding/custom-two-way/
 import { CounterComponent } from './components/data-binding/custom-two-way/counter.component';
 import { TtClassDirective } from './directives/tt-class.directive';
 import { CustomIfDirective } from './directives/custom-if.directive';
+import { AsyncComponent } from './pipes/async/async.component';
+import { HttpClientModule } from '@angular/common/http';
+import { LifeCycleHooksComponent } from './components/life-cycle-hooks/life-cycle-hooks.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +21,10 @@ import { CustomIfDirective } from './directives/custom-if.directive';
     CounterComponent,
     TtClassDirective,
     CustomIfDirective,
+    AsyncComponent,
+    LifeCycleHooksComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
