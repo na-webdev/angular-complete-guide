@@ -1,0 +1,17 @@
+<h2>{{ title }}</h2>
+<ng-content></ng-content>
+
+<p>{{ message }}</p>
+<h3>OnChanges</h3>
+<ul>
+  <li *ngFor="let change of stateChanges | keyvalue: orderOriginal">
+    <ul>
+      <h5>
+        <b>{{ change.key }}</b>
+      </h5>
+      <li *ngFor="let value of change.value | keyvalue: orderOriginal">
+        {{ value.key }}: {{ value.value }}
+      </li>
+    </ul>
+  </li>
+</ul>
