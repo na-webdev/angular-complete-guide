@@ -12,6 +12,7 @@ import { CustomIfDirective } from './directives/custom-if.directive';
 import { AsyncComponent } from './pipes/async/async.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LifeCycleHooksComponent } from './components/life-cycle-hooks/life-cycle-hooks.component';
+import { TemplateDrivenFormsComponent } from './components/template-driven-forms/template-driven-forms.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { LifeCycleHooksComponent } from './components/life-cycle-hooks/life-cycl
     CustomIfDirective,
     AsyncComponent,
     LifeCycleHooksComponent,
+    TemplateDrivenFormsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
