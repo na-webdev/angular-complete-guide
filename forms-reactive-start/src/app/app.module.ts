@@ -10,5 +10,6 @@ import { ReactiveFormsAssignmentComponent } from './reactive-forms-assignment/re
   imports: [BrowserModule, ReactiveFormsModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
+  exports: [ReactiveFormsAssignmentComponent],
 })
 export class AppModule {}
