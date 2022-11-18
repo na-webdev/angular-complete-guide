@@ -15,6 +15,12 @@ import { LifeCycleHooksComponent } from './components/life-cycle-hooks/life-cycl
 import { TemplateDrivenFormsComponent } from './components/template-driven-forms/template-driven-forms.component';
 import { ReactiveFormsComponent } from './components/reactive-forms/reactive-forms.component';
 import { FormArrayComponent } from './components/form-array/form-array.component';
+import { ObservablesComponent } from './observables/observables.component';
+import { OfAndFromComponent } from './observables/of-and-from.component';
+import { FromEventComponent } from './observables/fromEvent.component';
+import { PipeTapFilterMapComponent } from './observables/pipe-tap-filter-map.component';
+import { MapSwitchMapComponent } from './observables/map-switchMap.component';
+import { MergeMapComponent } from './observables/mergeMap.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +35,12 @@ import { FormArrayComponent } from './components/form-array/form-array.component
     TemplateDrivenFormsComponent,
     ReactiveFormsComponent,
     FormArrayComponent,
+    ObservablesComponent,
+    OfAndFromComponent,
+    FromEventComponent,
+    PipeTapFilterMapComponent,
+    MapSwitchMapComponent,
+    MergeMapComponent,
   ],
   imports: [
     BrowserModule,
