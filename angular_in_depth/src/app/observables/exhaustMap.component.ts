@@ -1,13 +1,13 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-import { of, from, fromEvent, interval, Observable, concatMap } from 'rxjs';
+import { of, from, fromEvent, interval, Observable, exhaustMap } from 'rxjs';
 import { HasEventTargetAddRemove } from 'rxjs/internal/observable/fromEvent';
 import { switchMap, map, catchError } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-concat-map',
-  template: ` <button #button>Concat Map</button>`,
+  selector: 'app-exhaust-map',
+  template: ` <button #button>Exhaust Map</button>`,
 })
-export class ConcatMapComponent implements AfterViewInit {
+export class ExhaustMapComponent implements AfterViewInit {
   @ViewChild('button', { static: true }) button: {
     nativeElement:
       | HasEventTargetAddRemove<any>
@@ -18,7 +18,7 @@ export class ConcatMapComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     this.clicks$ = fromEvent(this.button.nativeElement, 'click');
-    this.concatMapExample3();
+    this.exhaustMapExample3();
   }
 
   delayedObs(count: number) {
@@ -42,10 +42,10 @@ export class ConcatMapComponent implements AfterViewInit {
     });
   }
 
-  concatMapExample3() {
+  exhaustMapExample3() {
     let obs = this.clicks$
       .pipe(
-        concatMap(() => {
+        exhaustMap(() => {
           this.count = this.count + 1;
           return this.delayedObs(this.count);
         })

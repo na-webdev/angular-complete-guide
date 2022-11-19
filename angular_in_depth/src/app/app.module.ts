@@ -21,6 +21,9 @@ import { FromEventComponent } from './observables/fromEvent.component';
 import { PipeTapFilterMapComponent } from './observables/pipe-tap-filter-map.component';
 import { MapSwitchMapComponent } from './observables/map-switchMap.component';
 import { MergeMapComponent } from './observables/mergeMap.component';
+import { ConcatMapComponent } from './observables/concatMap.component';
+import { ExhaustMapComponent } from './observables/exhaustMap.component';
+import { TakeComponent } from './observables/take.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +44,9 @@ import { MergeMapComponent } from './observables/mergeMap.component';
     PipeTapFilterMapComponent,
     MapSwitchMapComponent,
     MergeMapComponent,
+    ConcatMapComponent,
+    ExhaustMapComponent,
+    TakeComponent,
   ],
   imports: [
     BrowserModule,
